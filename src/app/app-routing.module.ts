@@ -6,7 +6,7 @@ import { AuthRoutingModule } from './auth/auth.routing';
 
 // Componentes
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
-
+import { PagesRoutingModule } from './pages/pages.routing';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -17,7 +17,8 @@ const routes: Routes = [
   declarations: [],
   imports: [
     RouterModule.forRoot(routes),
-    AuthRoutingModule
+    AuthRoutingModule,
+    PagesRoutingModule
   ],
   exports: [RouterModule]
 })
