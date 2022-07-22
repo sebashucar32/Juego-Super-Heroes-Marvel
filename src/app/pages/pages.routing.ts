@@ -4,15 +4,17 @@ import { ListarTarjetasComponent } from './listar-tarjetas/listar-tarjetas.compo
 import { AgregarTarjetasComponent } from './agregar-tarjetas/agregar-tarjetas.component';
 import { LoginComponent } from '../auth/login/login.component';
 import { PinComponent } from './pin/pin.component';
+import { JuegoComponent } from './juego/juego.component';
 
 const routes: Routes = [
     {
         path: 'dashboard',
         children: [
-            { path: '', component: LoginComponent },
+            { path: '', component: ListarTarjetasComponent },
             { path: 'listar', component: ListarTarjetasComponent },
             { path: 'crear', component: AgregarTarjetasComponent },
             { path: 'pin', component: PinComponent },
+            { path: 'juego', component: JuegoComponent },
         ]
     }
 ];

@@ -7,12 +7,14 @@ import { AgregarTarjetasComponent } from './agregar-tarjetas/agregar-tarjetas.co
 import { ListarTarjetasComponent } from './listar-tarjetas/listar-tarjetas.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { PinComponent } from './pin/pin.component';
+import { JuegoComponent } from './juego/juego.component';
 
 @NgModule({
   declarations: [
     ListarTarjetasComponent,
     AgregarTarjetasComponent,
-    PinComponent
+    PinComponent,
+    JuegoComponent
   ],
   exports: [
     ListarTarjetasComponent,
