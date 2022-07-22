@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-tarjetas.component.css']
 })
 export class ListarTarjetasComponent implements OnInit {
-  public titulo : String = 'Listado de Cartas';
+  public titulo : String = 'Listado de Cartas de super heroes marvel';
 
   constructor() { }
 

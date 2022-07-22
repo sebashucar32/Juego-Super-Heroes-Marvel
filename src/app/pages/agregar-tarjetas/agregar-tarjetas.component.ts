@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agregar-tarjetas.component.css']
 })
 export class AgregarTarjetasComponent implements OnInit {
+  public titulo: String = 'Crea cartas Personalizadas de super heroes marvel';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }
