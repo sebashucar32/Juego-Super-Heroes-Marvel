@@ -5,12 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './listar-tarjetas.component.html',
   styleUrls: ['./listar-tarjetas.component.css']
 })
+
 export class ListarTarjetasComponent implements OnInit {
   public titulo : String = 'Listado de Cartas de super heroes marvel';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
