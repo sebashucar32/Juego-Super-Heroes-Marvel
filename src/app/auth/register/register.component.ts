@@ -1,31 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
-  usuario = {correo:'', password:''}
+  usuario = {correo : '', password:''};
 
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {}
 
-  ingresar() {
+  registrarUsuario() {
     console.log(this.usuario);
     const { correo, password } = this.usuario;
-    this.authService.register(correo, password).then(res => {
-      console.log("Se registro el usuario: ", res);
-    });
-  }
-
-  ingresarCongoogle() {
-    console.log(this.usuario);
-    const { correo, password } = this.usuario;
-    this.authService.loginWithGoogle(correo, password).then(res => {
-      console.log("Se registro el usuario: ", res);
-    });
+    this.authService.register(correo, password);
   }
 }

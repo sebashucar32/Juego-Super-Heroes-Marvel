@@ -5,7 +5,7 @@
                 <img src="./assets/images/portada-marvel.jpg" class="img-fluid" alt="Sample image">
             </div>
             <div class="col-md-3 col-lg-6 col-xl-4 offset-xl-1">
-                <form>
+                <form id="loginForm" autocomplete="off" [formGroup]="loginForm" (ngSubmit)="ingresar()">
                     <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start mt-4 mb-4">
                         <p class="lead fw-normal mb-0 me-3">Juego de super Heroes Marvel</p>
                     </div>
@@ -13,13 +13,13 @@
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form3Example3">Correo Electronico</label> 
-                        <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Correo Electronico" [(ngModel)]="usuario.correo" [ngModelOptions]="{standalone: true}" />
+                        <input class="form-control form-control-lg" type="email" id="idcorreo" placeholder="Correo Electronico" formControlName="email" />
                     </div>
         
                     <!-- Password input -->
                     <div class="form-outline mb-3">
                         <label class="form-label" for="form3Example4">Contraseña</label>
-                        <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Contraseña" [(ngModel)]="usuario.password" [ngModelOptions]="{standalone: true}" />
+                        <input class="form-control form-control-lg" type="password" id="idContrasena" placeholder="Contraseña" formControlName="password" />
                     </div>
         
                     <div class="d-flex justify-content-between align-items-center">
@@ -32,10 +32,10 @@
                     </div>
         
                     <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="ingresar()">Ingresar</button>
+                        <button class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" type="submit">Ingresar</button>
                         <button type="button" class="btn btn-info btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem; margin-left:10px" (click)="ingresarCongoogle()">Ingresar con google</button>
                         <p class="small fw-bold mt-2 pt-1 mb-0">Aun no tienes cuenta? 
-                            <a href="#!" class="link-danger">Registrarse</a>
+                            <a routerLink="/register" class="text-primary"><b>Registrarse</b></a>
                         </p>
                     </div>
                 </form>

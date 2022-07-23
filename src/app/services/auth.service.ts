@@ -1,37 +1,61 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import firebase from 'firebase/compat/app';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-  constructor(private afauth: AngularFireAuth) { }
+  constructor(private router: Router, private afauth: AngularFireAuth) { }
 
   async register(email: string, password: string) {
     try {
-      return await this.afauth.createUserWithEmailAndPassword(email, password);
+      await this.afauth.createUserWithEmailAndPassword(email, password);
+      localStorage.setItem("correo", email);
+      this.router.navigateByUrl('/');
+      return;
     } catch (error) {
-      console.log("Error en login: " + error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'al parecer el usuario ya existe pruebe con otro'
+      })
       return null;
     }
   }
 
   async login(email: string, password: string) {
     try {
-      return await this.afauth.signInWithEmailAndPassword(email, password);
+      await this.afauth.signInWithEmailAndPassword(email, password);
+      localStorage.setItem("correo", email);
+      this.router.navigateByUrl('/');
+      return;
     } catch (error) {
-      console.log("Error en login: " + error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Usuario o contraseña incorrecta'
+      })
+
       return null;
     }
   }
 
-  async loginWithGoogle(email: string, password: string) {
+  async loginWithGoogle() {
     try {
-      return await this.afauth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      await this.afauth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+      this.router.navigateByUrl('/');
+      return;
     } catch (error) {
-      console.log("Error en login con google: " + error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No se pudo loguear con la cuenta de google'
+      })
+
       return null;
     }
   }
