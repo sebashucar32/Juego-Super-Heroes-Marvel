@@ -6,20 +6,26 @@
         <div class="card-header fw-bold" style="color: black;">{{ titulo }}</div>
         <div class="card-body">
             <h4 class="card-title">
-                <a class="btn btn-primary btn-xs" href="">Crear Carta</a>
+                <a class="btn btn-primary btn-xs" routerLink="/dashboard/crear">Crear Carta</a>
+                <a class="btn btn-primary btn-xs mx-2" routerLink="/dashboard/pin">Crear Pin</a>
+                <input type="submit" value="Cerrar Sesion" class="btn btn-secondary mx-2" (click)="cerrarSesion()" style="margin-right: 100%;" />
             </h4>
             <table class="table table-striped table-bordered">
                 <thead class="thead-inverse">
-                    <tr>
+                    <tr class="text-center">
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Caracteristicas</th>
                         <th>XP</th>
                         <th>Imagen</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
