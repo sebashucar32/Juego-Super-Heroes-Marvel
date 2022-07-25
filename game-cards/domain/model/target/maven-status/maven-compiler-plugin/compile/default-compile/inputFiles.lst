@@ -1,0 +1,8 @@
+C:\Users\andres.saenz\Desktop\game-cards\domain\model\src\main\java\co\com\game\model\Game.java
+C:\Users\andres.saenz\Desktop\game-cards\domain\model\src\main\java\co\com\game\model\Player.java
+C:\Users\andres.saenz\Desktop\game-cards\domain\model\src\main\java\co\com\game\model\gateway\GameRepository.java
+C:\Users\andres.saenz\Desktop\game-cards\domain\model\src\main\java\co\com\game\model\gateway\PlayerRepository.java
+C:\Users\andres.saenz\Desktop\game-cards\domain\model\src\main\java\co\com\game\model\event\GameStarted.java
+C:\Users\andres.saenz\Desktop\game-cards\domain\model\src\main\java\co\com\game\model\gateway\CardRepository.java
+C:\Users\andres.saenz\Desktop\game-cards\domain\model\src\main\java\co\com\game\model\Card.java
+C:\Users\andres.saenz\Desktop\game-cards\domain\model\src\main\java\co\com\game\model\event\DomainEvent.java

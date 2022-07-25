@@ -1,0 +1,12 @@
+org\example\adapters\bus\RabbitMQConsumer.class
+org\example\adapters\CardMongoRepositoryAdapter.class
+org\example\adapters\game\GameRepositoryAdapter.class
+org\example\adapters\event\EventListener.class
+org\example\adapters\helper\OperationAdapter.class
+org\example\adapters\game\GameDocument.class
+org\example\adapters\game\GameDBRepository.class
+org\example\adapters\CardMongoDBRepository.class
+org\example\adapters\event\EventPublisher.class
+org\example\adapters\event\AuditEvent.class
+org\example\adapters\bus\RabbitMQEventBus.class
+org\example\adapters\CardDocument.class

@@ -1,0 +1,8 @@
+co\com\game\model\gateway\GameRepository.class
+co\com\game\model\Game.class
+co\com\game\model\event\DomainEvent.class
+co\com\game\model\gateway\PlayerRepository.class
+co\com\game\model\gateway\CardRepository.class
+co\com\game\model\Card.class
+co\com\game\model\event\GameStarted.class
+co\com\game\model\Player.class

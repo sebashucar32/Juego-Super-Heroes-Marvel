@@ -1,0 +1,12 @@
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\event\EventListener.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\helper\OperationAdapter.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\CardMongoRepositoryAdapter.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\bus\RabbitMQConsumer.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\game\GameDBRepository.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\CardDocument.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\bus\RabbitMQEventBus.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\CardMongoDBRepository.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\event\EventPublisher.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\event\AuditEvent.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\game\GameDocument.java
+C:\Users\andres.saenz\Desktop\game-cards\infrastructure\adapters\src\main\java\org\example\adapters\game\GameRepositoryAdapter.java
