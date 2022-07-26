@@ -7,6 +7,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +16,8 @@ import java.util.Set;
 @Document
 public class GameDocument {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private Boolean playing;
-    private Set<Player> players;
+    private Set<String> players;
 }

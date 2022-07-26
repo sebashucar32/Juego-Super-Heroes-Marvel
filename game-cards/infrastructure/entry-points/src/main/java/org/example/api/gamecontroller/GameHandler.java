@@ -7,7 +7,9 @@ import co.com.game.model.Game;
 import co.com.game.model.event.DomainEvent;
 
 import lombok.RequiredArgsConstructor;
+import lombok.var;
 import org.example.adapters.event.EventPublisher;
+import org.example.usecase.game.AddPlayerToGameUseCase;
 import org.example.usecase.game.CreateGameUseCase;
 import org.example.usecase.game.StartGameUseCase;
 
@@ -29,6 +31,8 @@ public class GameHandler {
     private final CreateGameUseCase createGameUseCase;
     private final StartGameUseCase startGameUseCase;
 
+    private final AddPlayerToGameUseCase addPlayerToGameUseCase;
+
     public Mono<ServerResponse> createGame(ServerRequest serverRequest) {
         return serverRequest.bodyToMono(Game.class)
                 .flatMap(createGameUseCase::createGame)
@@ -48,4 +52,22 @@ public class GameHandler {
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(BodyInserters.fromValue(game)));
     }
+
+    public Mono<ServerResponse> addPlayertoGame(ServerRequest serverRequest) {
+      String gameId = serverRequest.pathVariable("gameId");
+      String playerId = serverRequest.pathVariable("playerId");
+      Mono<Game> request = addPlayerToGameUseCase.addPlayer(gameId, playerId);
+
+      return request.flatMap(game -> ServerResponse.ok()
+        .contentType(MediaType.APPLICATION_JSON)
+        .body(BodyInserters.fromValue(game)));
+    }
+
+  public Mono<ServerResponse> getGame(ServerRequest serverRequest) {
+    String gameId = serverRequest.pathVariable("gameId");
+    Mono<Game> request = startGameUseCase.gameById(gameId);
+    return request.flatMap(game -> ServerResponse.ok()
+      .contentType(MediaType.APPLICATION_JSON)
+      .body(BodyInserters.fromValue(game)));
+  }
 }

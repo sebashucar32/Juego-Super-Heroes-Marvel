@@ -15,7 +15,7 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
-import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
+import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 
@@ -23,22 +23,15 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @RestController
 @RequestMapping("/game")
 public class GameController {
-    @Autowired
-    private final EventPublisher<DomainEvent> publisher;
-   private final CreateGameUseCase createGameUseCase;
 
-   private final StartGameUseCase startGameUseCase;
-
-
-    public GameController(EventPublisher<DomainEvent> publisher, CreateGameUseCase createGameUseCase, StartGameUseCase startGameUseCase) {
-        this.publisher = publisher;
-        this.createGameUseCase = createGameUseCase;
-        this.startGameUseCase = startGameUseCase;
+    public GameController() {
     }
 
     @Bean
     public RouterFunction<ServerResponse> gameRouterFunction(GameHandler gameHandler) {
         return route(POST("/game"), gameHandler::createGame)
-                .andRoute(POST("/game/start/{gameId}"), gameHandler::startGame);
+          .andRoute(GET("/game/{gameId}"), gameHandler::getGame)
+          .andRoute(POST("/game/start/{gameId}"), gameHandler::startGame)
+          .andRoute(PUT("game/addPlayer/{gameId}/{playerId}"),gameHandler::addPlayertoGame);
     }
 }
