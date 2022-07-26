@@ -10,6 +10,7 @@ import reactor.core.publisher.Mono;
 @Component
 @RestController
 @RequestMapping("/card")
+@CrossOrigin(origins={"http://localhost:4200"})
 public class CardController {
     private final ProcessCardUseCase processCardUseCase;
 
