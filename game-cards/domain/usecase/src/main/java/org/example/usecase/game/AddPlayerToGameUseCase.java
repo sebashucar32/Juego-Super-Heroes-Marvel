@@ -15,7 +15,6 @@ public class AddPlayerToGameUseCase {
       var gameToUpdate = repository.findById(id);
       return gameToUpdate.map(game -> {
         game.addPlayer(idplayer);
-        System.out.println("game: "+game);
         return game;
       });
     }

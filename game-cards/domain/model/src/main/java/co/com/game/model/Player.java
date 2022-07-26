@@ -11,5 +11,9 @@ public class Player {
     private String name;
     private String email;
     private Double points;
-    private Set<Card> cards;
+    private Set<String> cards;
+
+    public void addPlayer(String idCard) {
+      this.cards.add(idCard);
+    }
 }

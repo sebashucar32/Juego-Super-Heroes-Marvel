@@ -12,4 +12,8 @@ public class CreatePlayerUseCase {
     public Mono<Player> create(Player player) {
         return repository.save(player);
     }
+
+    public Mono<Player> get(String id) {
+      return repository.findById(id);
+    }
 }

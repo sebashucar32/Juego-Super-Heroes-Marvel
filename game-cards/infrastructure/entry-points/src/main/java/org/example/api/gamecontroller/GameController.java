@@ -23,17 +23,8 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @RestController
 @RequestMapping("/game")
 public class GameController {
-    @Autowired
-    private final EventPublisher<DomainEvent> publisher;
-   private final CreateGameUseCase createGameUseCase;
 
-   private final StartGameUseCase startGameUseCase;
-
-
-    public GameController(EventPublisher<DomainEvent> publisher, CreateGameUseCase createGameUseCase, StartGameUseCase startGameUseCase) {
-        this.publisher = publisher;
-        this.createGameUseCase = createGameUseCase;
-        this.startGameUseCase = startGameUseCase;
+    public GameController() {
     }
 
     @Bean

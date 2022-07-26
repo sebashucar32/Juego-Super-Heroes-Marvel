@@ -20,5 +20,5 @@ public class PlayerDocument {
     private String name;
     private String email;
     private Double points;
-    private Set<Card> cards;
+    private Set<String> cards;
 }
