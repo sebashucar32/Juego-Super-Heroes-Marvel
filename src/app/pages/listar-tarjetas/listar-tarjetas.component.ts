@@ -23,6 +23,7 @@ export class ListarTarjetasComponent implements OnInit {
   }
 
   deleteCarta(carta: Carta): void {
+    console.log(carta);
     Swal.fire({
       title: 'Esta seguro?',
       text: `¿Seguro que desea eliminar la carta`,
@@ -34,13 +35,14 @@ export class ListarTarjetasComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.cartaService.eliminarCarta(carta.id).subscribe(response => {
-          this.cartas = this.cartas.filter((car: Carta) => car !== carta)
           Swal.fire(
             'Eliminado!',
             'La carta ha sido borrada.',
             'success'
           )
         })
+
+        this.router.navigateByUrl('/');
       }
     })
   }
