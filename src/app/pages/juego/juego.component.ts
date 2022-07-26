@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
 })
 
 export class JuegoComponent implements OnInit {
-
+  public  pin = localStorage.getItem("pin");
   constructor(private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   cerrarSesion() {
     localStorage.removeItem("correo");

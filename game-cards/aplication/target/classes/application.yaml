@@ -1,0 +1,10 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: "game-cards"
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017/gameCard"
+  bus:
+    uri: ${BUS_URI:amqp://guest:guest@localhost:5672}
