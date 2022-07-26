@@ -12,6 +12,10 @@ public class Game {
     private String id;
     private Boolean playing;
 
-    private Set<Player> players;
+    private Set<String> players;
+
+  public void addPlayer(String player) {
+    this.players.add(player);
+  }
 
 }

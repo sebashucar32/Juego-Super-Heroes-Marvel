@@ -15,7 +15,7 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
-import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
+import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 
@@ -39,6 +39,8 @@ public class GameController {
     @Bean
     public RouterFunction<ServerResponse> gameRouterFunction(GameHandler gameHandler) {
         return route(POST("/game"), gameHandler::createGame)
-                .andRoute(POST("/game/start/{gameId}"), gameHandler::startGame);
+          .andRoute(GET("/game/{gameId}"), gameHandler::getGame)
+          .andRoute(POST("/game/start/{gameId}"), gameHandler::startGame)
+          .andRoute(PUT("game/addPlayer/{gameId}/{playerId}"),gameHandler::addPlayertoGame);
     }
 }
