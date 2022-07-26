@@ -1,4 +1,4 @@
-package org.example.usecase.game;
+package org.example.usecase.player;
 
 import co.com.game.model.Player;
 import co.com.game.model.gateway.PlayerRepository;

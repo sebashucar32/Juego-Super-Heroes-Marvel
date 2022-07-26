@@ -1,8 +1,7 @@
 package org.example.api;
 
-import co.com.game.model.Card;
 import co.com.game.model.Player;
-import org.example.usecase.game.CreatePlayerUseCase;
+import org.example.usecase.player.CreatePlayerUseCase;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
