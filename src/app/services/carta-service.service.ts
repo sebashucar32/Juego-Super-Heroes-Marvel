@@ -25,7 +25,7 @@ export class CartaServiceService {
     return this.http.put<Carta>(`${this.urlEndPoint}/${carta.id}`, carta, {headers: this.httpHeaders});
   }
 
-  eliminarCarta(id: string):  Observable<Carta> {
+  eliminarCarta(id: string): Observable<Carta> {
     return this.http.delete<Carta>(`${this.urlEndPoint}/delete/${id}`, {headers: this.httpHeaders});
   }
 }

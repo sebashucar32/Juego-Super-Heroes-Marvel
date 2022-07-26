@@ -28,7 +28,8 @@
                         <td>{{ carta.name }}</td>
                         <td>{{ carta.description }}</td>
                         <td>{{ carta.poder }}</td>
-                        <td>{{ carta.url }}</td>
+                        <!--<td>{{ carta.url }}</td>-->
+                        <td><img src="../../../assets/images/cartas/{{ carta.url }}" height="100px" width="100px"></td>
                         <td><button type="button" name="editar" class="btn btn-warning">Editar</button></td>
                         <td><button type="button" name="eliminar" class="btn btn-danger" (click)="deleteCarta(carta)">Eliminar</button></td>
                     </tr>
