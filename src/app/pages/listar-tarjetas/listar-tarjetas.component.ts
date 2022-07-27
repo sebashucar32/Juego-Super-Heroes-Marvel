@@ -49,6 +49,7 @@ export class ListarTarjetasComponent implements OnInit {
 
   cerrarSesion() {
     localStorage.removeItem("correo");
+    localStorage.removeItem("pin");
     this.router.navigateByUrl('/login');
   }
 }

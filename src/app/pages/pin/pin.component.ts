@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
   templateUrl: './pin.component.html',
   styleUrls: ['./pin.component.css']
 })
+
 export class PinComponent implements OnInit {
   constructor(private router: Router, private pinService: PinService ) { }
 
@@ -19,11 +20,9 @@ export class PinComponent implements OnInit {
       game => {
         console.log(game);
         localStorage.setItem("pin", `${game.id}`)
-        Swal.fire('Nuevo Game', `PIN: ${game.id} creado con exito!`, 'success')
+        Swal.fire('Nuevo Juego', `PIN: ${game.id} creado con exito!`, 'success')
         this.router.navigate(['/dashboard/juego'])
       }
     )
-    
   }
-
 }

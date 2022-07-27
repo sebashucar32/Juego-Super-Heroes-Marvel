@@ -5,6 +5,7 @@ import { AgregarTarjetasComponent } from './agregar-tarjetas/agregar-tarjetas.co
 import { PinComponent } from './pin/pin.component';
 import { JuegoComponent } from './juego/juego.component';
 import { AuthGuard } from '../guards/auth.guard';
+import { PinGuard } from '../guards/pin.guard';
 
 const routes: Routes = [
     {
@@ -15,7 +16,7 @@ const routes: Routes = [
             { path: 'listar', component: ListarTarjetasComponent },
             { path: 'crear', component: AgregarTarjetasComponent },
             { path: 'pin', component: PinComponent },
-            { path: 'juego', component: JuegoComponent },
+            { path: 'juego', component: JuegoComponent, canActivate: [PinGuard] },
         ]
     }
 ];
