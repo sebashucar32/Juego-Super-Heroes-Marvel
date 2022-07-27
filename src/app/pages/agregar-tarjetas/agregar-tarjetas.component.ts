@@ -17,7 +17,7 @@ export class AgregarTarjetasComponent implements OnInit {
   constructor(private cartaService: CartaServiceService, private router: Router) { }
   ngOnInit(): void {}
 
-  public crearCuenta(): void {
+  public crearCarta(): void {
     let aleatorio = random(0, 1000);
     let juegoId = "jue-" + String(aleatorio);
     this.carta.id = juegoId;

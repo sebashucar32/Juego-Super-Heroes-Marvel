@@ -14,6 +14,7 @@ export class AuthGuard implements CanActivate {
     const session = localStorage.getItem('correo');  // Devuelve null cuando no hay dato en el localeStorage
 
     if(session === null) {
+      this.router.navigateByUrl('/login');
       return false;
     } else {
       return true;

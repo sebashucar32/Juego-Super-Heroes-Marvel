@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
 })
 
 export class NoAuthGuard implements CanActivate {
+  constructor(private router: Router) {}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -15,6 +17,7 @@ export class NoAuthGuard implements CanActivate {
       if(session === null) {
         return true;
       } else {
+        this.router.navigateByUrl('/dashboard');
         return false;
       }
   }
