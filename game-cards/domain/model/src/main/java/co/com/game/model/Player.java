@@ -8,12 +8,10 @@ import java.util.Set;
 @Setter
 public class Player {
     private String id;
-    private String name;
     private String email;
-    private Double points;
-    private Set<String> cards;
+    private Set<Card> cards;
 
-    public void addPlayer(String idCard) {
-      this.cards.add(idCard);
+    public void addPlayer(Card card) {
+      this.cards.add(card);
     }
 }

@@ -1,5 +1,6 @@
 package org.example.api.playercontroller;
 
+import co.com.game.model.Card;
 import co.com.game.model.Player;
 import lombok.RequiredArgsConstructor;
 import org.example.usecase.player.AddCardtoPlayerUseCase;
@@ -35,8 +36,8 @@ public class PlayerHandler {
 
   public Mono<ServerResponse> addCardToPlayer(ServerRequest serverRequest) {
     String playerId = serverRequest.pathVariable("playerId");
-    String cardId = serverRequest.pathVariable("cardId");
-    Mono<Player> request = addCardtoPlayerUseCase.addCard(playerId, cardId);
+    Card card = new Card();
+    Mono<Player> request = addCardtoPlayerUseCase.addCard(playerId, card);
 
     return request.flatMap(player -> ServerResponse.ok()
       .contentType(MediaType.APPLICATION_JSON)

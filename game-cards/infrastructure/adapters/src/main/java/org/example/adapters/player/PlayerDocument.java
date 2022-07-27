@@ -17,8 +17,6 @@ public class PlayerDocument {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
-    private String name;
     private String email;
-    private Double points;
-    private Set<String> cards;
+    private Set<Card> cards;
 }

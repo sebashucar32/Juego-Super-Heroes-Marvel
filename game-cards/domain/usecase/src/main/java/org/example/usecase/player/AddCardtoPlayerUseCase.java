@@ -1,5 +1,6 @@
 package org.example.usecase.player;
 
+import co.com.game.model.Card;
 import co.com.game.model.Game;
 import co.com.game.model.Player;
 import co.com.game.model.gateway.PlayerRepository;
@@ -11,10 +12,10 @@ import reactor.core.publisher.Mono;
 public class AddCardtoPlayerUseCase {
   private final PlayerRepository repository;
 
-  public Mono<Player> addCard(String id, String idCard) {
+  public Mono<Player> addCard(String id, Card card) {
     var playerToUpdate = repository.findById(id);
     return playerToUpdate.map(player -> {
-      player.addPlayer(idCard);
+      player.addPlayer(card);
       return player;
     });
   }
