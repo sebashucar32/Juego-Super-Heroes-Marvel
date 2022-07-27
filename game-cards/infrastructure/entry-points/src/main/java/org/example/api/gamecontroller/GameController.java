@@ -20,6 +20,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Component
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
+@RequestMapping("/game")
 public class GameController {
 private final CreateGameUseCase createGameUseCase;
     public GameController(CreateGameUseCase createGameUseCase) {
@@ -35,11 +36,14 @@ private final CreateGameUseCase createGameUseCase;
 
     return createGameUseCase.createGame(game);
   }
-    @Bean
+
+
+    /*@Bean
     public RouterFunction<ServerResponse> gameRouterFunction(GameHandler gameHandler) {
       return route(POST("/game"), gameHandler::createGame)
           .andRoute(GET("/game/{gameId}"), gameHandler::getGame)
           .andRoute(POST("/game/start/{gameId}"), gameHandler::startGame)
         .andRoute(PUT("game/addPlayer/{gameId}/{playerId}"),gameHandler::addPlayertoGame);
-    }
+    }*/
+
 }
