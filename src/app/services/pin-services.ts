@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Carta } from '../models/Carta';
 import { Game } from '../models/Game';
 
 @Injectable({

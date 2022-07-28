@@ -14,7 +14,7 @@ public class SocketController {
   List<Player> jugadores = new ArrayList<>();
   List<String> correos = new ArrayList<>();
 
-  @MessageMapping("/hello")
+  @MessageMapping("/juego")
   @SendTo("/topic/superHeroes")
   public void entrarSala(String correo) throws Exception {
     Thread.sleep(1000); // simulated delay

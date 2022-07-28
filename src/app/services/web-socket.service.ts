@@ -51,7 +51,7 @@ export class WebSocketService {
   _send(email: any) {
     console.log("calling logout api via web socket");
     console.log(email);
-    this.stompClient.send("/app/hello", {}, JSON.stringify(email));
+    this.stompClient.send("/app/juego", {}, JSON.stringify(email));
   }
 
   onMessageReceived(message: string) {

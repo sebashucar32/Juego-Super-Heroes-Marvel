@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 export class ListarTarjetasComponent implements OnInit {
   public titulo : String = 'Listado de Cartas de super heroes marvel';
   cartas: any;
+  public page!: number;
   
   constructor(private router: Router, private cartaService: CartaServiceService) { }
 

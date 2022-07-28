@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 // Modulos
 import { FormsModule } from '@angular/forms';
@@ -23,7 +24,8 @@ import { JuegoComponent } from './juego/juego.component';
   imports: [
     CommonModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPaginationModule
   ]
 })
   

@@ -6,14 +6,50 @@
         <h1 class="text-center mt-4 fw-bold">Mis Cartas</h1>
         <div class="row">
             <div class="col-6">
-                <img src="./assets/images/cartas/0BF.jpg" class="img-fluid" alt="Sample image">
-                <img src="./assets/images/cartas/0E0.jpg" class="img-fluid" alt="Sample image">
-                <img src="./assets/images/cartas/1AE.jpg" class="img-fluid" alt="Sample image">
+                <div class="card my-2">
+                    <div class="card-header">{{carta1.name}}</div>
+                    <div class="card-body">
+                        <img src="./assets/images/cartas/{{ carta1.url }}" class="img-fluid" alt="carta1">
+                    </div>
+                    <div class="card-footer">XP: {{ carta1.poder }}</div>
+                </div>
+                <div class="card my-2">
+                    <div class="card-header">{{carta3.name}}</div>
+                    <div class="card-body">
+                        <img src="./assets/images/cartas/{{ carta3.url }}" class="img-fluid" alt="carta3">
+                    </div>
+                    <div class="card-footer">XP: {{ carta3.poder }}</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">{{carta5.name}}</div>
+                    <div class="card-body">
+                        <img src="./assets/images/cartas/{{ carta5.url }}" class="img-fluid" alt="carta5">
+                    </div>
+                    <div class="card-footer">XP: {{ carta5.poder }}</div>
+                </div>
             </div>
             <div class="col-6">
-                <img src="./assets/images/cartas/1DF.jpg" class="img-fluid" alt="Sample image">
-                <img src="./assets/images/cartas/1F4.jpg" class="img-fluid" alt="Sample image">
-                <img src="./assets/images/cartas/1F5.jpg" class="img-fluid" alt="Sample image">
+                <div class="card my-2">
+                    <div class="card-header">{{carta7.name}}</div>
+                    <div class="card-body">
+                        <img src="./assets/images/cartas/{{ carta7.url }}" class="img-fluid" alt="carta2">
+                    </div>
+                    <div class="card-footer">XP: {{ carta7.poder }}</div>
+                </div>
+                <div class="card my-2">
+                    <div class="card-header">{{carta9.name}}</div>
+                    <div class="card-body">
+                        <img src="./assets/images/cartas/{{ carta9.url }}" class="img-fluid" alt="carta4">
+                    </div>
+                    <div class="card-footer">XP: {{ carta9.poder }}</div>
+                </div>
+                <div class="card">
+                    <div class="card-header">{{carta11.name}}</div>
+                    <div class="card-body">
+                        <img src="./assets/images/cartas/{{ carta11.url }}" class="img-fluid" alt="carta6">
+                    </div>
+                    <div class="card-footer">XP: {{ carta11.poder }}</div>
+                </div> 
             </div>
         </div>
     </div>

@@ -23,6 +23,7 @@
     "bootstrap": "^5.2.0",
     "firebase": "^9.9.0",
     "jquery": "^3.6.0",
+    "ngx-pagination": "^6.0.2",
     "rxjs": "~7.5.0",
     "sockjs-client": "^1.6.1",
     "stompjs": "^2.3.3",

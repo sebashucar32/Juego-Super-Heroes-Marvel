@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let carta of cartas">
+                    <tr *ngFor="let carta of cartas | paginate: { itemsPerPage: 5, currentPage: page }">
                         <td>{{ carta.id }}</td>
                         <td>{{ carta.name }}</td>
                         <td>{{ carta.description }}</td>
@@ -39,4 +39,4 @@
     </div>
 </div>
 
-
+<pagination-controls class="text-center" (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>

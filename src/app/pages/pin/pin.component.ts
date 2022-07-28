@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 
 export class PinComponent implements OnInit {
   webSocketService: WebSocketService | undefined;
-  saludo: any;   // Se puede quitar
+  correo: any;
 
   constructor(private router: Router,  private pinService: PinService) { }
 
@@ -22,7 +22,6 @@ export class PinComponent implements OnInit {
 
   connect() {
     this.webSocketService?._connect();
-    //this.enviarEmail();
   }
 
   disconnect() {
@@ -30,13 +29,13 @@ export class PinComponent implements OnInit {
   }
 
   enviarEmail() {
-    this.saludo = localStorage.getItem("correo");
-    console.log(this.saludo);
-    this.webSocketService?._send(this.saludo);
+    this.correo = localStorage.getItem("correo");
+    console.log(this.correo);
+    this.webSocketService?._send(this.correo);
   }
 
   handleMessage(message: string) {
-    this.saludo = message;
+    this.correo = message;
   }
 
   // logica de la pagina del pin esto es despues de la configuracion de socket
@@ -45,11 +44,15 @@ export class PinComponent implements OnInit {
       game => {
         console.log(game);
         this.connect();
-        this.enviarEmail();
+
+        setTimeout(() => {
+          this.enviarEmail();
+        }, 1000);
+        
         localStorage.setItem("pin", `${game.id}`)
         Swal.fire('Nuevo Juego', `PIN: ${game.id} creado con exito!`, 'success')
         this.router.navigate(['/dashboard/juego'])
       }
-    )
+    ) 
   }
 }
