@@ -31,6 +31,4 @@ public class PlayerController {
   public Mono<Player> createPlayer(@RequestBody Player player) {
     return createPlayerUseCase.create(player);
   }
-
-
 }

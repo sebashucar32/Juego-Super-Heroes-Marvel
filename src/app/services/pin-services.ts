@@ -8,13 +8,13 @@ import { Game } from '../models/Game';
 })
 
 export class PinService {
-    private urlEndPoint: string = 'http://localhost:8080';
+    private urlEndPoint: string = 'http://localhost:8080/game';
     private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
     constructor(private http: HttpClient) {}
 
     generatePin(): Observable<Game>{
-        const email = localStorage.getItem("correo");
-        return this.http.post<Game>(`${this.urlEndPoint}/createpin/${email}`, {headers: this.httpHeaders});
+      const email = localStorage.getItem("correo");
+      return this.http.post<Game>(`${this.urlEndPoint}/createpin/${email}`, {headers: this.httpHeaders});
     }
 }
