@@ -10,17 +10,9 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 
 @Component
 @RestController
+@CrossOrigin(origins="http://localhost:4200")
 @RequestMapping("/player")
 public class PlayerController {
-
-
- /* @Bean
-  public RouterFunction<ServerResponse> playerRouterFunction(PlayerHandler playerHandler) {
-    return route(POST("/player"), playerHandler::createPlayer)
-      .andRoute(GET("/player/{playerId}"), playerHandler::getPlayer)
-      .andRoute(PUT("/player/addCard/{playerId}/{cardId}"),playerHandler::addCardToPlayer);
-  }*/
-
   private final CreatePlayerUseCase createPlayerUseCase;
 
   public PlayerController(CreatePlayerUseCase createPlayerUseCase) {

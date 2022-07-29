@@ -14,4 +14,13 @@ public class Player {
     public void addPlayer(Card card) {
       this.cards.add(card);
     }
+
+  @Override
+  public String toString() {
+    return "Player{" +
+      "id='" + id + '\'' +
+      ", email='" + email + '\'' +
+      ", cards=" + cards +
+      '}';
+  }
 }

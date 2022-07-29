@@ -18,13 +18,13 @@ public class CardDocument {
     private String name;
     private String description;
     private String url;
-    private double poder;
+    private int poder;
 
     public CardDocument() {
 
     }
 
-    public CardDocument(String id, String name, String description, String url, double poder) {
+    public CardDocument(String id, String name, String description, String url, int poder) {
         this.setId(id);
         this.setName(name);
         this.setDescription(description);

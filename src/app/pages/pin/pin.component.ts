@@ -17,7 +17,7 @@ export class PinComponent implements OnInit {
   constructor(private router: Router,  private pinService: PinService) { }
 
   ngOnInit(): void {
-    this.webSocketService = new WebSocketService(new PinComponent(this.router, this.pinService));
+    this.webSocketService = new WebSocketService();
   }
 
   connect() {

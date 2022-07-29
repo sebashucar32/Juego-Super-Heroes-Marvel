@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import * as Stomp from 'stompjs';
 import * as SockJS from 'sockjs-client';
 import { PinComponent } from '../pages/pin/pin.component';
+import { JuegoComponent } from '../pages/juego/juego.component';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,8 @@ export class WebSocketService {
   webSocketEndPoint: string = 'http://localhost:8080/ws';
   topic: string = "/topic/superHeroes";
   stompClient: any;
-  pinComponent: PinComponent;
 
-  constructor(pinComponent: PinComponent) { 
-    this.pinComponent = pinComponent;
+  constructor() { 
   }
 
   _connect() {
@@ -56,6 +55,6 @@ export class WebSocketService {
 
   onMessageReceived(message: string) {
     console.log("Message Recieved from Server :: " + message);
-    this.pinComponent.handleMessage(JSON.stringify(message));
+    //this.pinComponent.handleMessage(JSON.stringify(message));
   }
 }

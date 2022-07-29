@@ -11,13 +11,13 @@ public class Card {
     private String description;
 
     private String url;
-    private double poder;
+    private int poder;
 
     public Card() {
 
     }
 
-    public Card(String id, String name, String description, String url, double poder) {
+    public Card(String id, String name, String description, String url, int poder) {
         this.id = id;
         this.name = name;
         this.description = description;
